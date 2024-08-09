@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af6e4dc8c056d9c40a1dbe568ade3a37, type: 3}
+  m_Name: AdsSettings
+  m_EditorClassIdentifier: 
+  _openType: 1
+  _bannerType: 1
+  _interstitialType: 1
+  _rewardedVideoType: 1
+  _adMobContainer:
+    _androidOpenID: 
+    _iOSOpenID: 
+    _androidBannerID: 
+    _iOSBannerID: 
+    _bannerType: 0
+    _bannerPosition: 0
+    _androidInterstitialID: 
+    _iOSInterstitialID: 
+    _androidRewardID: 
+    _iOSRewardID: 
+    _testDevicesIDs: []
+  _dummyContainer:
+    bannerPosition: 0
+  _testMode: 0
+  _systemLogs: 0
+  _interstitialFirstStartDelay: 0
+  _interstitialShowingDelay: 30

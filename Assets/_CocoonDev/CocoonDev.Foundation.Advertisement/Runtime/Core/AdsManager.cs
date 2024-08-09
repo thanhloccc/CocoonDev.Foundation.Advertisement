@@ -19,7 +19,7 @@ namespace CocoonDev.Foundation.Advertisement
         private const string NO_ADS_PREF_NAME = "ADS_STATE";
         private const string NO_ADS_ACTIVE_HASH = "809d08040da0182f4fffa4702095e69e";
 
-        private static readonly AdProviderHandler[] s_adProvider = new AdProviderHandler[]
+        private static AdProviderHandler[] s_adProvider = new AdProviderHandler[]
                 {
                         new AdDummyHandler(AdProvider.Dummy),
 #if MODULE_ADMOB
@@ -40,8 +40,8 @@ namespace CocoonDev.Foundation.Advertisement
         private static AdsSettings s_settings;
       
 
-        private static readonly List<Action> s_mainThreadEvents = new List<Action>();
-        private static readonly Dictionary<AdProvider, AdProviderHandler> s_activeAdProviderHandlers = new Dictionary<AdProvider, AdProviderHandler>();
+        private static List<Action> s_mainThreadEvents = new List<Action>();
+        private static Dictionary<AdProvider, AdProviderHandler> s_activeAdProviderHandlers = new Dictionary<AdProvider, AdProviderHandler>();
 
         private static AdProviderHandler.RewardedVideoCallback s_rewardedVideoCallback;
         private static AdProviderHandler.InterstitialCallback s_interCallback;
@@ -63,6 +63,27 @@ namespace CocoonDev.Foundation.Advertisement
         // Properties
         public static int MainThreadEventsCount { get =>  s_mainThreadEvents.Count; }
         public static AdsSettings Settings { get { return s_settings; } }
+
+#if UNITY_EDITOR
+        /// <seealso href="https://docs.unity3d.com/Manual/DomainReloading.html"/>
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void Init()
+        {
+            s_isModuleInitialize = false;
+
+            s_mainThreadEvents = new();
+            s_activeAdProviderHandlers = new();
+
+            s_adProvider = new AdProviderHandler[]
+                {
+                        new AdDummyHandler(AdProvider.Dummy),
+#if MODULE_ADMOB
+                        new AdMobHandler(AdProvider.AdMob), 
+#endif
+                };
+        }
+#endif
+
 
         #region Intialize
         public static void Initialize(AdsSettings settings
