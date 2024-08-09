@@ -36,7 +36,7 @@ namespace CocoonDev.Foundation.Advertisement
 
         public void Initialize()
         {
-            _interCooldownFeedback.RegisterListener(ResetTimeElapsed);
+            _interCooldownFeedback.RegisterListener(OnCooldownComplete);
         }
 
         public void OnLogic()
@@ -73,6 +73,12 @@ namespace CocoonDev.Foundation.Advertisement
             _afkTimeElapsed = 0.0f;
         }
 
+        private void OnCooldownComplete()
+        {
+            AdsManager.ShowInter();
+            ResetTimeElapsed();
+        }
+
         private void ShowInterCooldownFeedback()
         {
             _interCooldownFeedback.gameObject.SetActive(true);
@@ -84,5 +90,6 @@ namespace CocoonDev.Foundation.Advertisement
             _interCooldownFeedback.gameObject.SetActive(false);
             _interCooldownFeedback.Cleanup();
         }
+
     }
 }
