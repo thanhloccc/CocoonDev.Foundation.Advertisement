@@ -1,7 +1,13 @@
 {
     "name": "CocoonDev.Foundation.Advertisement",
     "rootNamespace": "CocoonDev.Foundation.Advertisement",
-    "references": [],
+    "references": [
+        "UniTask",
+        "PrimeTween.Runtime",
+        "CocoonDev.Foundation",
+        "ZString",
+        "Unity.TextMeshPro"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

@@ -10,6 +10,20 @@
       },
       "url": "https://package.openupm.com"
     },
+    "com.cocoondev.foundation": {
+      "version": "https://github.com/thanhloccc/CocoonDev.Foundation.git?path=Assets/_CocoonDev/CocoonDev.Foundation",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "org.nuget.system.runtime.compilerservices.unsafe": "6.0.0",
+        "com.cysharp.unitask": "2.5.5",
+        "com.zbase.collections.pooled": "2.8.4",
+        "com.zbase.foundation.pooling": "2.3.3",
+        "com.annulusgames.tween-playables": "0.9.1",
+        "com.cysharp.zstring": "2.6.0"
+      },
+      "hash": "95ff20ffd0bd75c4dffa8638dbe339aeac8e254d"
+    },
     "com.cysharp.unitask": {
       "version": "2.5.5",
       "depth": 0,

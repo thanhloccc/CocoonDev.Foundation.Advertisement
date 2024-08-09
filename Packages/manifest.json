@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.annulusgames.tween-playables": "0.9.1",
+    "com.cocoondev.foundation": "https://github.com/thanhloccc/CocoonDev.Foundation.git?path=Assets/_CocoonDev/CocoonDev.Foundation",
     "com.cysharp.unitask": "2.5.5",
     "com.cysharp.zstring": "2.6.0",
     "com.kyrylokuzyk.primetween": "file:../Assets/Plugins/PrimeTween/internal/com.kyrylokuzyk.primetween.tgz",
