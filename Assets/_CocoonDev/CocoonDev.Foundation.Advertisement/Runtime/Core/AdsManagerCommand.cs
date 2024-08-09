@@ -12,10 +12,6 @@ namespace CocoonDev.Foundation.Advertisement
         [Title("Asset Loader", titleAlignment: TitleAlignments.Centered)]
         [SerializeField]
         private AdsSettings _settings;
-        [SerializeField]
-        private GameObject _dummyCanvasPrefab;
-        [SerializeField]
-        private GameObject _interCooldownPrefab;
 
         [Title("Time Configs", titleAlignment: TitleAlignments.Centered)]
         [SerializeField]
