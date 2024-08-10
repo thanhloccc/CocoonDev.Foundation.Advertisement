@@ -9,6 +9,10 @@ namespace CocoonDev.Foundation.Advertisement
     [DefaultExecutionOrder(-999)]
     public class AdsManagerCommand : MonoBehaviour
     {
+        [Title("Settings", titleAlignment: TitleAlignments.Centered)]
+        [SerializeField]
+        private bool _dontDestroy;
+
         [Title("Asset Loader", titleAlignment: TitleAlignments.Centered)]
         [SerializeField]
         private AdsSettings _settings;
@@ -28,6 +32,9 @@ namespace CocoonDev.Foundation.Advertisement
         {
             RenewLoadingCts(ref _loadingCts);
             AdsManager.Initialize(_settings, _loadAdOnStart, _loadingCts.Token);
+
+            if( _dontDestroy )
+                DontDestroyOnLoad(this);
         }
         private async void Start()
         {
